@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5a2bf2cbe106dd13efd09a3b09813fa6",
+    "content-hash": "f76be67611fce15097f125c97f478caf",
     "packages": [
         {
             "name": "doctrine/cache",
@@ -239,7 +239,7 @@
         },
         {
             "name": "gauthier/doctrine-multilingual-string",
-            "version": "1.0a",
+            "version": "1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/gauthier/doctrine-multilingual-string.git",
@@ -3971,9 +3971,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "gauthier/doctrine-multilingual-string": 15
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

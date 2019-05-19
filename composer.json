@@ -18,6 +18,6 @@
   },
   "minimum-stability": "stable",
   "require": {
-    "gauthier/doctrine-multilingual-string": "~1.0a"
+    "gauthier/doctrine-multilingual-string": "~1.0.0"
   }
 }

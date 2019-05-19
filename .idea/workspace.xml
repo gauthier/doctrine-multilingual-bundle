@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="967e9467-666b-445e-9779-5d3358ca2ce8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/DependencyInjection/Configuration.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DependencyInjection/DoctrineMultilingualBundleExtension.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DoctrineMultilingualBundle.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Resources/config/default.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,11 +17,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/composer.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
+            <state relative-caret-position="259">
+              <caret line="20" column="52" selection-start-line="20" selection-start-column="52" selection-end-line="20" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -50,7 +47,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DependencyInjection/DoctrineMultilingualBundleExtension.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="273">
@@ -79,12 +76,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/src/DoctrineMultilingualBundle.php" />
         <option value="$PROJECT_DIR$/src/DependencyInjection/Configuration.php" />
         <option value="$PROJECT_DIR$/src/Resources/config/default.yml" />
         <option value="$PROJECT_DIR$/src/DependencyInjection/DoctrineMultilingualBundleExtension.php" />
         <option value="$PROJECT_DIR$/vendor/gauthier/doctrine-multilingual-string/src/MultilingualString.php" />
+        <option value="$PROJECT_DIR$/composer.json" />
       </list>
     </option>
   </component>
@@ -117,24 +114,6 @@
               <item name="doctrine-multilingual-bundle" type="b2602c69:ProjectViewProjectNode" />
               <item name="doctrine-multilingual-bundle" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="doctrine-multilingual-bundle" type="b2602c69:ProjectViewProjectNode" />
-              <item name="doctrine-multilingual-bundle" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="doctrine-multilingual-bundle" type="b2602c69:ProjectViewProjectNode" />
-              <item name="doctrine-multilingual-bundle" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="doctrine-multilingual-bundle" type="b2602c69:ProjectViewProjectNode" />
-              <item name="doctrine-multilingual-bundle" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -142,6 +121,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="/usr/local/bin/node" />
@@ -171,12 +151,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1558274867204</updated>
-      <workItem from="1558274869268" duration="2170000" />
+      <workItem from="1558274869268" duration="2747000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2170000" />
+    <option name="totallyTimeSpent" value="2747000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="832" extended-state="6" />
@@ -207,13 +187,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/DoctrineMultilingualBundle.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -252,6 +225,13 @@
           <folding>
             <element signature="e#69#120#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="20" column="52" selection-start-line="20" selection-start-column="52" selection-end-line="20" selection-end-column="52" />
         </state>
       </provider>
     </entry>
