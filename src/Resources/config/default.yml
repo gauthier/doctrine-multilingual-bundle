@@ -1,0 +1,5 @@
+doctrine_multilingual:
+  languages:
+    supported: ['en']
+    default: ['en']
+    fallback: ['en']

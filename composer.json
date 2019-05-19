@@ -1,0 +1,23 @@
+{
+  "name": "gauthier/doctrine-multilingual-bundle",
+  "type": "plugin",
+  "require-dev": {
+    "codeception/codeception": "^3.0",
+    "symfony/symfony": "^4.2"
+  },
+  "authors": [
+    {
+      "name": "Gauthier Delamarre",
+      "email": "gdelamarre@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Gauthier\\MultilingualBundle\\": "src/"
+    }
+  },
+  "minimum-stability": "stable",
+  "require": {
+    "gauthier/doctrine-multilingual-string": "~1.0a"
+  }
+}
