@@ -22,18 +22,16 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
             ->children()
-            ->arrayNode('languages')
+            ->arrayNode('languages')->defaultValue(['en'])
             ->prototype('scalar')
-            // ->defaultValue(['en'])
             ->end()
             ->end()
             ->scalarNode('default')
-            ->defaultValue('en')
+            ->defaultValue('auto')
             ->end()
             ->scalarNode('fallback')
-            ->defaultValue('end')
+            ->defaultValue('en')
             ->end()
-           
             ->arrayNode('routes')
             ->beforeNormalization()
             ->ifArray()

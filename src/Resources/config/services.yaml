@@ -1,0 +1,7 @@
+services:
+  doctrine.multilingual.initializer:
+    class: Gauthier\MultilingualBundle\EventListener\DoctrineMultilingualInitializer
+    autowire: true
+    tags:
+      - { name: kernel.event_listener, event: kernel.controller }
+
