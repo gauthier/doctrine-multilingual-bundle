@@ -1,6 +1,6 @@
 {
   "name": "gauthier/doctrine-multilingual-bundle",
-  "type": "plugin",
+  "type": "symfony-bundle",
   "require-dev": {
     "codeception/codeception": "^3.0",
     "symfony/symfony": "^4.2"
