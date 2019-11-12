@@ -1,7 +1,17 @@
 services:
-  doctrine.multilingual.initializer:
+  doctrine_multilingual.initializer:
     class: Gauthier\MultilingualBundle\EventListener\DoctrineMultilingualInitializer
     autowire: true
     tags:
-      - { name: kernel.event_listener, event: kernel.controller }
+      - { name: kernel.event_listener, event: kernel.request, priority: 1024 }
+
+  doctrine_multilingual.controller.main:
+    class: Gauthier\MultilingualBundle\Controller\MultilingualStringsController
+    autowire: true
+    tags:
+      - {name: controller.service_arguments}
+
+  Gauthier\MultilingualBundle\Service\MultilingualService:
+    class: Gauthier\MultilingualBundle\Service\MultilingualService
+    autowire: true
 

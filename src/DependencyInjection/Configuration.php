@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Gauthier\MultilingualBundle\DependencyInjection;
 
 
@@ -22,7 +21,7 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
             ->children()
-            ->arrayNode('languages')->defaultValue(['en'])
+            ->arrayNode('languages')//->defaultValue(['en'])
             ->prototype('scalar')
             ->end()
             ->end()
