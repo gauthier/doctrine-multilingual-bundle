@@ -15,22 +15,15 @@ class DoctrineMultilingualExtension extends Extension
 
     public function load(array $configs, ContainerBuilder $container)
     {
-
-        $this->addAnnotatedClassesToCompile([
-            MultilingualStringsController::class
-        ]);
-
         $loader = new YamlFileLoader(
             $container,
             new FileLocator(__DIR__ . '/../Resources/config')
         );
         $loader->load('services.yaml');
-        //$loader->load('routes.yaml');
 
         $configuration = new Configuration();
 
         $config = $this->processConfiguration($configuration, $configs);
-
 
         $container->setParameter('doctrine_mutlilingual.languages', $config['languages'] ?: ['en']);
         $container->setParameter('doctrine_mutlilingual.default', $config['default']);
