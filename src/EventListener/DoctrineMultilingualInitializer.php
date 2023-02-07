@@ -5,9 +5,12 @@ namespace Gauthier\MultilingualBundle\EventListener;
 
 
 use Gauthier\MultilingualString\MultilingualString;
+use Gauthier\MultilingualString\MultilingualStringException;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
+use Symfony\Component\HttpKernel\Event\RequestEvent;
 
 class DoctrineMultilingualInitializer
 {
@@ -15,29 +18,29 @@ class DoctrineMultilingualInitializer
     /**
      * @var ContainerInterface
      */
-    protected $container;
+    protected $parameters;
 
     /**
      * DoctrineMultilingualInitializer constructor.
-     * @param ContainerInterface $container
+     * @param ContainerInterface $parameters
      */
-    public function __construct(ContainerInterface $container)
+    public function __construct(ParameterBagInterface $parameters)
     {
-        $this->container = $container;
+        $this->parameters = $parameters;
     }
 
     /**
-     * @param GetResponseEvent $event
-     * @throws \Gauthier\MultilingualString\MultilingualStringException
+     * @param RequestEvent $event
+     * @throws MultilingualStringException
      */
-    public function onKernelRequest(GetResponseEvent $event)
+    public function onKernelRequest(RequestEvent $event): void
     {
 
         // set available languages
-        MultilingualString::setAvailableLanguages($this->container->getParameter('doctrine_mutlilingual.languages'));
+        MultilingualString::setAvailableLanguages($this->parameters->getParameter('doctrine_mutlilingual.languages'));
 
         // set fallback language
-        $fallbackLanguage = $this->container->getParameter('doctrine_mutlilingual.fallback');
+        $fallbackLanguage = $this->parameters->getParameter('doctrine_mutlilingual.fallback');
         if ($fallbackLanguage == 'auto') {
             $fallbackLanguage = $this->negotiateFallbackLanguage($event->getRequest());
             if (!$fallbackLanguage) {
@@ -47,7 +50,7 @@ class DoctrineMultilingualInitializer
 
         MultilingualString::setFallbackLanguage($fallbackLanguage);
 
-        $defaultLanguage = $this->container->getParameter('doctrine_mutlilingual.default');
+        $defaultLanguage = $this->parameters->getParameter('doctrine_mutlilingual.default');
         if ($defaultLanguage == 'auto') {
             // look for http Accept-Language header
             $defaultLanguage = $this->negotiateDefaultLanguage($event->getRequest());
@@ -56,7 +59,7 @@ class DoctrineMultilingualInitializer
         MultilingualString::setDefaultLanguage($defaultLanguage);
 
 
-        foreach ($this->container->getParameter('doctrine_mutlilingual.routes') as $route) {
+        foreach ($this->parameters->getParameter('doctrine_mutlilingual.routes') as $route) {
             $route = array_values($route);
             MultilingualString::setRoute(...$route);
         }
@@ -64,7 +67,7 @@ class DoctrineMultilingualInitializer
 
     protected function negotiateFallbackLanguage(Request $request)
     {
-        $frameworkFallbackLocales = $this->container->get('translator')->getFallbackLocales();
+        $frameworkFallbackLocales = $this->parameters->get('translator')->getFallbackLocales();
         if ($frameworkFallbackLocales) {
             return $frameworkFallbackLocales[0];
         }
@@ -74,7 +77,7 @@ class DoctrineMultilingualInitializer
     /**
      * @param Request $request
      * @return mixed
-     * @throws \Gauthier\MultilingualString\MultilingualStringException
+     * @throws MultilingualStringException
      */
     protected function negotiateDefaultLanguage(Request $request)
     {
