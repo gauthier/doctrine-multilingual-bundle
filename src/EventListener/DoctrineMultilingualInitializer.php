@@ -37,10 +37,10 @@ class DoctrineMultilingualInitializer
     {
 
         // set available languages
-        MultilingualString::setAvailableLanguages($this->parameters->getParameter('doctrine_mutlilingual.languages'));
+        MultilingualString::setAvailableLanguages($this->parameters->get('doctrine_mutlilingual.languages'));
 
         // set fallback language
-        $fallbackLanguage = $this->parameters->getParameter('doctrine_mutlilingual.fallback');
+        $fallbackLanguage = $this->parameters->get('doctrine_mutlilingual.fallback');
         if ($fallbackLanguage == 'auto') {
             $fallbackLanguage = $this->negotiateFallbackLanguage($event->getRequest());
             if (!$fallbackLanguage) {
@@ -50,7 +50,7 @@ class DoctrineMultilingualInitializer
 
         MultilingualString::setFallbackLanguage($fallbackLanguage);
 
-        $defaultLanguage = $this->parameters->getParameter('doctrine_mutlilingual.default');
+        $defaultLanguage = $this->parameters->get('doctrine_mutlilingual.default');
         if ($defaultLanguage == 'auto') {
             // look for http Accept-Language header
             $defaultLanguage = $this->negotiateDefaultLanguage($event->getRequest());
@@ -59,7 +59,7 @@ class DoctrineMultilingualInitializer
         MultilingualString::setDefaultLanguage($defaultLanguage);
 
 
-        foreach ($this->parameters->getParameter('doctrine_mutlilingual.routes') as $route) {
+        foreach ($this->parameters->get('doctrine_mutlilingual.routes') as $route) {
             $route = array_values($route);
             MultilingualString::setRoute(...$route);
         }
