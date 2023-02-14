@@ -10,7 +10,10 @@ class DoctrineMultilingualBundle extends Bundle
 {
     public function __construct()
     {
-        Type::addType('multilingual_string', MultilingualStringType::class);
+        $types = Type::getTypesMap();
+        if (!isset($types['multilingual_string'])) {
+            Type::addType('multilingual_string', MultilingualStringType::class);
+        }
     }
 
 

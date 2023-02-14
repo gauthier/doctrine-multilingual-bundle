@@ -4,6 +4,8 @@
 namespace Gauthier\MultilingualBundle\Service;
 
 use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\Persistence\ObjectManager;
+use Symfony\Bridge\Doctrine\ManagerRegistry;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class MultilingualService
@@ -12,24 +14,24 @@ class MultilingualService
     /** @var ContainerInterface */
     protected $container;
 
-    /** @var EntityManagerInterface */
-    protected $entityManager;
+    /** @var ObjectManager */
+    protected $objectManager;
 
     /**
      * MultilingualService constructor.
      * @param ContainerInterface $container
      */
-    public function __construct(ContainerInterface $container, EntityManagerInterface $entityManager)
+    public function __construct(ContainerInterface $container, ManagerRegistry $registry)
     {
         $this->container = $container;
-        $this->entityManager = $entityManager;
+        $this->objectManager = $registry->getManager();
     }
 
     public function getMultilingualFields()
     {
         $entities = [];
-        $em = $this->getEntityManager();
-        $meta = $em->getMetadataFactory()->getAllMetadata();
+        $manager = $this->getObjectManager();
+        $meta = $manager->getMetadataFactory()->getAllMetadata();
         foreach ($meta as $m) {
             $entities[] = $m->getName();
         }
@@ -38,11 +40,11 @@ class MultilingualService
     }
 
     /**
-     * @return EntityManagerInterface
+     * @return ObjectManager
      */
-    public function getEntityManager(): EntityManagerInterface
+    public function getObjectManager(): ObjectManager
     {
-        return $this->entityManager;
+        return $this->objectManager;
     }
 
     /**
